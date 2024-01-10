@@ -15,7 +15,7 @@ public class ArticlesService {
     @Autowired
     private ArticlesRepository articlesRepository;
 
-    public Optional<Articles> getEmployee(final Long id) {
+    public Optional<Articles> getArticle(final Long id) {
         return articlesRepository.findById(id);
     }
 
@@ -23,11 +23,11 @@ public class ArticlesService {
         return articlesRepository.findAll();
     }
 
-    public void deleteEmployee(final Long id) {
+    public void deleteArticle(final Long id) {
         articlesRepository.deleteById(id);
     }
 
-    public Articles saveEmployee(Articles articles) {
+    public Articles saveArticle(Articles articles) {
         Articles savedArticles = articlesRepository.save(articles);
         return savedArticles;
     }

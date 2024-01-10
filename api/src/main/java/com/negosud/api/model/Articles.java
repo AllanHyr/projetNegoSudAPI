@@ -12,18 +12,33 @@ public class Articles {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String reference;
+
     private String nom;
 
-    private String reference;
+    private float prix;
+
+    private String description;
+
+    private float marge;
+
+    private int conditionnement;
+
+    private boolean reapprovisionnement;
 
     @Column(name="quantite_reappro")
     private int quantiteReappro;
+
+    @Column(name="seuil_mini")
+    private int seuilMini;
+
+    @Column(name="fk_fournisseur")
+    private Long fkFournisseur;
 
     @Column(name="fk_stock")
     private Long fkStockage;
 
     @Column(name="fk_famille")
     private Long fkFamille;
-
 
 }
