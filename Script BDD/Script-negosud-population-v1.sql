@@ -129,7 +129,7 @@ INSERT INTO Articles (id, nom, reference, prix, description, marge, conditionnem
 
 CREATE TABLE Commandes(
    id BIGINT,
-   date_commande VARCHAR(50) NOT NULL,
+   date_commande timestamp NOT NULL,
    commentaire VARCHAR(50),
    fk_fournisseur BIGINT NOT NULL,
    fk_utilisateur BIGINT NOT NULL,
@@ -153,7 +153,7 @@ INSERT INTO Commandes (id, date_commande, commentaire, fk_fournisseur, fk_utilis
 CREATE TABLE Facturation(
    id BIGINT,
    TVA DECIMAL(15,2),
-   date_paiement DATE,
+   date_paiement timestamp,
    moyen_paiement VARCHAR(50),
    fk_commande BIGINT NOT NULL,
    PRIMARY KEY(id),
@@ -175,7 +175,7 @@ INSERT INTO Facturation (id, TVA, date_paiement, moyen_paiement, fk_commande) VA
 
 CREATE TABLE Livraison(
    id BIGINT,
-   date_livraison VARCHAR(50) NOT NULL,
+   date_livraison timestamp NOT NULL,
    adresse_livraison VARCHAR(50),
    fk_coordonnee BIGINT NOT NULL,
    fk_facturation BIGINT NOT NULL,
