@@ -3,24 +3,29 @@ package com.negosud.api.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
 @Entity
 @Table(name = "articles_commandes")
 public class ArticlesCommandes {
 
-    @Id
-    @Column(name="fk_article")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long fkArticle;
-
-    @Id
-    @Column(name="fk_commande")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long fkCommande;
+    @EmbeddedId
+    private ArticlesCommandesId id;
 
     private int quantite;
 
     @Column(name="prix_applique")
     private float prixApplique;
 
+    @Embeddable
+    public static class ArticlesCommandesId implements Serializable {
+
+        @Column(name = "fk_article")
+        private Long fkArticle;
+
+        @Column(name = "fk_commande")
+        private Long fkCommande;
+
+    }
 }
