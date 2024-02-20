@@ -3,14 +3,12 @@ package com.negosud.api.controller;
 import com.negosud.api.model.Fournisseurs;
 import com.negosud.api.service.FournisseursService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
+@CrossOrigin("http://localhost:9000/")
 public class FournisseursController {
 
     @Autowired
