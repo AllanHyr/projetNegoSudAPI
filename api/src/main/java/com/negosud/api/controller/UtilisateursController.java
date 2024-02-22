@@ -30,7 +30,11 @@ public class UtilisateursController {
     }
 
     @PutMapping("/utilisateurs")
-    public Utilisateurs saveutilisateur(Utilisateurs utilisateurs)  {
+    public Utilisateurs updateUtilisateur(@RequestBody Utilisateurs utilisateurs)  {
+        return utilisateursService.updateUtilisateur(utilisateurs);
+    }
+    @PostMapping("/utilisateurs")
+    public Utilisateurs saveutilisateur(@RequestBody Utilisateurs utilisateurs)  {
         return utilisateursService.saveUtilisateur(utilisateurs);
     }
 }

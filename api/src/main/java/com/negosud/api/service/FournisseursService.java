@@ -27,6 +27,10 @@ public class FournisseursService {
         fournisseursRepository.deleteById(id);
     }
 
+    public Fournisseurs updateFournisseur(Fournisseurs fournisseurs) {
+        Fournisseurs savedFournisseurs = fournisseursRepository.save(fournisseurs);
+        return savedFournisseurs;
+    }
     public Fournisseurs saveFournisseur(Fournisseurs fournisseurs) {
         Fournisseurs savedFournisseurs = fournisseursRepository.save(fournisseurs);
         return savedFournisseurs;

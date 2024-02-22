@@ -20,17 +20,21 @@ public class LivraisonController {
     }
 
     @GetMapping("/livraison/{id}")
-    public Optional<Livraison> getLivraison(Long id) {
+    public Optional<Livraison> getLivraison(@PathVariable Long id) {
         return livraisonService.getLivraison(id);
     }
 
     @DeleteMapping("/livraison/{id}")
-    public void deleteLivraison(final Long id) {
+    public void deleteLivraison(@PathVariable final Long id) {
         livraisonService.deleteLivraison(id);
     }
 
     @PutMapping("/livraison")
-    public Livraison saveStock(Livraison livraison)  {
+    public Livraison updateStock(@RequestBody Livraison livraison)  {
+        return livraisonService.updateLivraison(livraison);
+    }
+    @PostMapping("/livraison")
+    public Livraison saveStock(@RequestBody Livraison livraison)  {
         return livraisonService.saveLivraison(livraison);
     }
 }

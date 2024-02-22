@@ -1,7 +1,6 @@
 package com.negosud.api.controller;
 
 import com.negosud.api.model.Articles;
-import com.negosud.api.model.NewArticles;
 import com.negosud.api.service.ArticlesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,12 +30,12 @@ public class ArticlesController {
     }
 
     @PutMapping("/article")
-    public Articles updateArticle(Articles articles)  {
+    public Articles updateArticle(@RequestBody Articles articles)  {
        return articlesService.updateArticle(articles);
     }
 
     @PostMapping("/article")
-    public NewArticles saveArticle(NewArticles articles)  {
+    public Articles saveArticle(@RequestBody Articles articles)  {
         return articlesService.saveArticle(articles);
     }
 

@@ -20,17 +20,21 @@ public class CoordonneesController {
     }
 
     @GetMapping("/coordonnees/{id}")
-    public Optional<Coordonnees> getCoordonnee(Long id) {
+    public Optional<Coordonnees> getCoordonnee(@PathVariable Long id) {
         return coordonneesService.getCoordonnee(id);
     }
 
     @DeleteMapping("/coordonnees/{id}")
-    public void deleteCoordonnee(final Long id) {
+    public void deleteCoordonnee(@PathVariable final Long id) {
         coordonneesService.deleteCoordonnee(id);
     }
 
     @PutMapping("/coordonnees")
-    public Coordonnees saveCoordonnee(Coordonnees coordonnees)  {
+    public Coordonnees updateCoordonnee(@RequestBody Coordonnees coordonnees)  {
+        return coordonneesService.updateCoordonnee(coordonnees);
+    }
+    @PostMapping("/coordonnees")
+    public Coordonnees saveCoordonnee(@RequestBody Coordonnees coordonnees)  {
         return coordonneesService.saveCoordonnee(coordonnees);
     }
 }

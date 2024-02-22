@@ -20,17 +20,21 @@ public class FamillesController {
     }
 
     @GetMapping("/familles/{id}")
-    public Optional<Familles> getFamille(Long id) {
+    public Optional<Familles> getFamille(@PathVariable Long id) {
         return famillesService.getFamille(id);
     }
 
     @DeleteMapping("/familles/{id}")
-    public void deleteFamille(final Long id) {
+    public void deleteFamille(@PathVariable final Long id) {
         famillesService.deleteFamille(id);
     }
 
     @PutMapping("/familles")
-    public Familles saveFamille(Familles familles)  {
+    public Familles updateFamille(@RequestBody Familles familles)  {
+        return famillesService.updateFamille(familles);
+    }
+    @PostMapping("/familles")
+    public Familles saveFamille(@RequestBody Familles familles)  {
         return famillesService.saveFamille(familles);
     }
 }

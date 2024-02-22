@@ -27,6 +27,10 @@ public class CoordonneesService {
         coordonneesRepository.deleteById(id);
     }
 
+    public Coordonnees updateCoordonnee(Coordonnees coordonnees) {
+        Coordonnees savedCoordonnees = coordonneesRepository.save(coordonnees);
+        return savedCoordonnees;
+    }
     public Coordonnees saveCoordonnee(Coordonnees coordonnees) {
         Coordonnees savedCoordonnees = coordonneesRepository.save(coordonnees);
         return savedCoordonnees;

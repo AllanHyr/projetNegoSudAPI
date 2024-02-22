@@ -20,17 +20,22 @@ public class CommandesController {
     }
 
     @GetMapping("/commandes/{id}")
-    public Optional<Commandes> getCommande(Long id) {
+    public Optional<Commandes> getCommande(@PathVariable Long id) {
         return commandesService.getCommande(id);
     }
 
     @DeleteMapping("/commandes/{id}")
-    public void deleteCommande(final Long id) {
+    public void deleteCommande(@PathVariable final Long id) {
         commandesService.deleteCommande(id);
     }
 
     @PutMapping("/commandes")
-    public Commandes saveCommande(Commandes commandes)  {
+    public Commandes updateCommande(@RequestBody Commandes commandes)  {
+        return commandesService.updateCommande(commandes);
+    }
+
+    @PostMapping("/commandes")
+    public Commandes saveCommande(@RequestBody Commandes commandes)  {
         return commandesService.saveCommande(commandes);
     }
 }

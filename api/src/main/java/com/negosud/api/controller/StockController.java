@@ -20,17 +20,22 @@ public class StockController {
     }
 
     @GetMapping("/stock/{id}")
-    public Optional<Stock> getStock(Long id) {
+    public Optional<Stock> getStock(@PathVariable Long id) {
         return stockService.getStock(id);
     }
 
     @DeleteMapping("/stock/{id}")
-    public void deleteStock(final Long id) {
+    public void deleteStock(@PathVariable final Long id) {
         stockService.deleteStock(id);
     }
 
     @PutMapping("/stock")
-    public Stock saveStock(Stock stock)  {
+    public Stock updateStock(@RequestBody Stock stock)  {
+        return stockService.updateStock(stock);
+    }
+    @PostMapping("/stock")
+    public Stock saveStock(@RequestBody Stock stock)  {
         return stockService.saveStock(stock);
     }
+
 }

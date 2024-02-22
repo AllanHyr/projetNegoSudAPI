@@ -20,17 +20,21 @@ public class FacturationController {
     }
 
     @GetMapping("/facturation/{id}")
-    public Optional<Facturation> getFacturation(Long id) {
+    public Optional<Facturation> getFacturation(@PathVariable Long id) {
         return facturationService.getFacturation(id);
     }
 
     @DeleteMapping("/facturation/{id}")
-    public void deleteSFacturation(final Long id) {
+    public void deleteSFacturation(@PathVariable final Long id) {
         facturationService.deleteFacturation(id);
     }
 
     @PutMapping("/facturation")
-    public Facturation saveFacturation(Facturation facturation)  {
+    public Facturation updateFacturation(@RequestBody Facturation facturation)  {
+        return facturationService.updateFacturation(facturation);
+    }
+    @PostMapping("/facturation")
+    public Facturation saveFacturation(@RequestBody Facturation facturation)  {
         return facturationService.saveFacturation(facturation);
     }
 }

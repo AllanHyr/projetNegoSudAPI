@@ -27,6 +27,10 @@ public class ArticlesCommandesService {
         articlesCommandesRepository.deleteById(id);
     }
 
+    public ArticlesCommandes updateArticleCommande(ArticlesCommandes articlesCommandes) {
+        ArticlesCommandes savedArticlesCommandes = articlesCommandesRepository.save(articlesCommandes);
+        return savedArticlesCommandes;
+    }
     public ArticlesCommandes saveArticleCommande(ArticlesCommandes articlesCommandes) {
         ArticlesCommandes savedArticlesCommandes = articlesCommandesRepository.save(articlesCommandes);
         return savedArticlesCommandes;

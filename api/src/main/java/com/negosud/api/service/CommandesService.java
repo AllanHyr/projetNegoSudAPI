@@ -27,6 +27,10 @@ public class CommandesService {
         commandesRepository.deleteById(id);
     }
 
+    public Commandes updateCommande(Commandes commandes) {
+        Commandes savedCommandes = commandesRepository.save(commandes);
+        return savedCommandes;
+    }
     public Commandes saveCommande(Commandes commandes) {
         Commandes savedCommandes = commandesRepository.save(commandes);
         return savedCommandes;

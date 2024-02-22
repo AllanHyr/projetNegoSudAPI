@@ -20,17 +20,21 @@ public class FournisseursController {
     }
 
     @GetMapping("/fournisseurs/{id}")
-    public Optional<Fournisseurs> getFournisseur(Long id) {
+    public Optional<Fournisseurs> getFournisseur(@PathVariable Long id) {
         return fournisseursService.getFournisseur(id);
     }
 
     @DeleteMapping("/fournisseurs/{id}")
-    public void deleteFournisseur(final Long id) {
+    public void deleteFournisseur(@PathVariable final Long id) {
         fournisseursService.deleteFournisseur(id);
     }
 
     @PutMapping("/fournisseurs")
-    public Fournisseurs saveFournisseur(Fournisseurs fournisseurs)  {
+    public Fournisseurs updateFournisseur(@RequestBody Fournisseurs fournisseurs)  {
+        return fournisseursService.updateFournisseur(fournisseurs);
+    }
+    @PostMapping("/fournisseurs")
+    public Fournisseurs saveFournisseur(@RequestBody Fournisseurs fournisseurs)  {
         return fournisseursService.saveFournisseur(fournisseurs);
     }
 }

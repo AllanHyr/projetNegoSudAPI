@@ -1,5 +1,5 @@
 CREATE TABLE Stock(
-   id BIGINT,
+   id BIGINT auto_increment,
    quantite_stock INT,
    PRIMARY KEY(id)
 );
@@ -17,7 +17,7 @@ insert into stock (id, quantite_stock) values
 (10, 66);
 
 CREATE TABLE Familles(
-   id BIGINT,
+   id BIGINT auto_increment,
    nom VARCHAR(50) NOT NULL,
    description VARCHAR(750),
    PRIMARY KEY(id)
@@ -36,7 +36,7 @@ INSERT INTO Familles (id, nom, description) VALUES
 (10, 'Léger', 'Vins légers, parfaits pour une dégustation décontractée.');
 
 CREATE TABLE Utilisateurs(
-   id BIGINT,
+   id BIGINT auto_increment,
    grade INT,
    identifiant VARCHAR(50) NOT NULL,
    mot_de_passe VARCHAR(50) NOT NULL,
@@ -58,7 +58,7 @@ INSERT INTO Utilisateurs (id, grade, identifiant, mot_de_passe, nom, prenom) VAL
 (10, 0, 'user5', 'mypassword', 'Johnson', 'Emma');
 
 CREATE TABLE Coordonnees(
-   id BIGINT,
+   id BIGINT auto_increment,
    adresse VARCHAR(50) NOT NULL,
    mail VARCHAR(50),
    telephone VARCHAR(50),
@@ -80,7 +80,7 @@ INSERT INTO Coordonnees (id, adresse, mail, telephone, fk_utilisateur) VALUES
 (10, '707 Boulevard Saint-Germain', 'user5@example.com', '+0009998888', 10);
 
 CREATE TABLE Fournisseurs(
-   id BIGINT,
+   id BIGINT auto_increment,
    nom VARCHAR(50),
    description VARCHAR(750),
    fk_coordonnee BIGINT NOT NULL,
@@ -96,7 +96,7 @@ INSERT INTO Fournisseurs (id, nom, description, fk_coordonnee) VALUES
 (5, 'Uby', 'Domaine Uby, expert en vins du Sud-Ouest.', 5);
 
 CREATE TABLE Articles(
-   id BIGINT,
+   id BIGINT auto_increment,
    nom VARCHAR(50) NOT NULL,
    reference VARCHAR(50) NOT NULL,
    prix DECIMAL(15,2),
@@ -128,7 +128,7 @@ INSERT INTO Articles (id, nom, reference, prix, description, marge, conditionnem
 (10, 'Merlot 2018', 'MERLOT2018', 17.99, 'Vin rouge, millésime 2018.', 0.12, 12, true, 15, 5, 3, 10, 1);
 
 CREATE TABLE Commandes(
-   id BIGINT,
+   id BIGINT auto_increment,
    date_commande timestamp NOT NULL,
    commentaire VARCHAR(50),
    fk_fournisseur BIGINT NOT NULL,
@@ -151,7 +151,7 @@ INSERT INTO Commandes (id, date_commande, commentaire, fk_fournisseur, fk_utilis
 (10, '2024-10-30', 'Articles pour les fêtes de fin d\'année', 4, 10);
 
 CREATE TABLE Facturation(
-   id BIGINT,
+   id BIGINT auto_increment,
    TVA DECIMAL(15,2),
    date_paiement timestamp,
    moyen_paiement VARCHAR(50),
@@ -174,7 +174,7 @@ INSERT INTO Facturation (id, TVA, date_paiement, moyen_paiement, fk_commande) VA
 (10, 15.50, '2024-10-15', 'Espèces', 10);
 
 CREATE TABLE Livraison(
-   id BIGINT,
+   id BIGINT auto_increment,
    date_livraison timestamp NOT NULL,
    adresse_livraison VARCHAR(50),
    fk_coordonnee BIGINT NOT NULL,

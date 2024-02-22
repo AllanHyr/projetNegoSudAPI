@@ -21,17 +21,21 @@ public class ArticlesCommandesController {
     }
 
     @GetMapping("/articles-commandes/{id}")
-    public Optional<ArticlesCommandes> getArticleCommande(Long id) {
+    public Optional<ArticlesCommandes> getArticleCommande(@PathVariable Long id) {
         return articlesCommandesService.getArticleCommande(id);
     }
 
     @DeleteMapping("/articles-commandes/{id}")
-    public void deleteArticleCommande(final Long id) {
+    public void deleteArticleCommande(@PathVariable final Long id) {
         articlesCommandesService.deleteArticleCommande(id);
     }
 
     @PutMapping("/articles-commandes")
-    public ArticlesCommandes saveArticleCommande(ArticlesCommandes articlesCommandes)  {
+    public ArticlesCommandes updateArticleCommande(@RequestBody ArticlesCommandes articlesCommandes)  {
+        return articlesCommandesService.updateArticleCommande(articlesCommandes);
+    }
+    @PostMapping("/articles-commandes")
+    public ArticlesCommandes saveArticleCommande(@RequestBody ArticlesCommandes articlesCommandes)  {
         return articlesCommandesService.saveArticleCommande(articlesCommandes);
     }
 }

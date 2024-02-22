@@ -27,8 +27,13 @@ public class StockService {
         stockRepository.deleteById(id);
     }
 
+    public Stock updateStock(Stock stock) {
+        Stock savedStock = stockRepository.save(stock);
+        return savedStock;
+    }
     public Stock saveStock(Stock stock) {
         Stock savedStock = stockRepository.save(stock);
         return savedStock;
     }
+
 }

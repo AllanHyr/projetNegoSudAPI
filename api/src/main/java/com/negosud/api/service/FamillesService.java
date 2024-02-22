@@ -27,6 +27,10 @@ public class FamillesService {
         famillesRepository.deleteById(id);
     }
 
+    public Familles updateFamille(Familles familles) {
+        Familles savedFamilles = famillesRepository.save(familles);
+        return savedFamilles;
+    }
     public Familles saveFamille(Familles familles) {
         Familles savedFamilles = famillesRepository.save(familles);
         return savedFamilles;

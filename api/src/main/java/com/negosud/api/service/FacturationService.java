@@ -27,6 +27,10 @@ public class FacturationService {
         facturationRepository.deleteById(id);
     }
 
+    public Facturation updateFacturation(Facturation facturation) {
+        Facturation savedFacturation = facturationRepository.save(facturation);
+        return savedFacturation;
+    }
     public Facturation saveFacturation(Facturation facturation) {
         Facturation savedFacturation = facturationRepository.save(facturation);
         return savedFacturation;

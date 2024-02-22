@@ -27,6 +27,10 @@ public class LivraisonService {
         livraisonRepository.deleteById(id);
     }
 
+    public Livraison updateLivraison(Livraison livraison) {
+        Livraison savedLivraison = livraisonRepository.save(livraison);
+        return savedLivraison;
+    }
     public Livraison saveLivraison(Livraison livraison) {
         Livraison savedLivraison = livraisonRepository.save(livraison);
         return savedLivraison;

@@ -27,6 +27,10 @@ public class UtilisateursService {
         utilisateursRepository.deleteById(id);
     }
 
+    public Utilisateurs updateUtilisateur(Utilisateurs utilisateurs) {
+        Utilisateurs savedUtilisateur = utilisateursRepository.save(utilisateurs);
+        return savedUtilisateur;
+    }
     public Utilisateurs saveUtilisateur(Utilisateurs utilisateurs) {
         Utilisateurs savedUtilisateur = utilisateursRepository.save(utilisateurs);
         return savedUtilisateur;
