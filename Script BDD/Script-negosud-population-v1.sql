@@ -69,16 +69,16 @@ CREATE TABLE Coordonnees(
 );
 
 INSERT INTO Coordonnees (id, adresse, mail, telephone, fk_utilisateur) VALUES
-(1, '123 Rue de la République', 'admin@example.com', '+1234567890', 1),
-(2, '456 Avenue des Champs-Élysées', 'user1@example.com', '+9876543210', 2),
-(3, '789 Rue du Faubourg Saint-Honoré', 'user2@example.com', '+1122334455', 3),
-(4, '101 Boulevard Haussmann', 'modo@example.com', '+9998887777', 4),
-(5, '202 Rue de la Liberté', 'user3@example.com', '+4445556666', 5),
-(6, '303 Avenue Montaigne', 'admin2@example.com', '+7778889999', 6),
-(7, '404 Rue du Bac', 'john@example.com', '+1112223333', 7),
-(8, '505 Quai des Orfèvres', 'user4@example.com', '+6667778888', 8),
-(9, '606 Rue Royale', 'power@example.com', '+3332221111', 9),
-(10, '707 Boulevard Saint-Germain', 'user5@example.com', '+0009998888', 10);
+(1, '123 Rue de la République', 'admin@example.com', '0234567890', 1),
+(2, '456 Avenue des Champs-Élysées', 'user1@example.com', '0876543210', 2),
+(3, '789 Rue du Faubourg Saint-Honoré', 'user2@example.com', '0122334455', 3),
+(4, '101 Boulevard Haussmann', 'modo@example.com', '0998887777', 4),
+(5, '202 Rue de la Liberté', 'user3@example.com', '0445556666', 5),
+(6, '303 Avenue Montaigne', 'admin2@example.com', '0778889999', 6),
+(7, '404 Rue du Bac', 'john@example.com', '0112223333', 7),
+(8, '505 Quai des Orfèvres', 'user4@example.com', '0667778888', 8),
+(9, '606 Rue Royale', 'power@example.com', '0332221111', 9),
+(10, '707 Boulevard Saint-Germain', 'user5@example.com', '0009998888', 10);
 
 CREATE TABLE Fournisseurs(
    id BIGINT auto_increment,
