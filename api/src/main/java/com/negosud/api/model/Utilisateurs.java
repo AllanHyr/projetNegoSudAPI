@@ -10,17 +10,47 @@ public class Utilisateurs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
-    private int grade;
+    int grade;
 
-    private String identifiant;
+    String identifiant;
+
+    public Long getId() {
+        return id;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public String getIdentifiant() {
+        return identifiant;
+    }
+
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public String getToken() {
+        return token;
+    }
 
     @Column(name="mot_de_passe")
-    private String motDePasse;
+    String motDePasse;
 
-    private String nom;
+    String nom;
 
-    private String prenom;
+    String prenom;
+
+    String token;
 
 }

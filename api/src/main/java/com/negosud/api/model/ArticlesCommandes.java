@@ -11,21 +11,40 @@ import java.io.Serializable;
 public class ArticlesCommandes {
 
     @EmbeddedId
-    private ArticlesCommandesId id;
+    ArticlesCommandesId id;
 
-    private int quantite;
+    public ArticlesCommandesId getId() {
+        return id;
+    }
+
+    public int getQuantite() {
+        return quantite;
+    }
+
+    public float getPrixApplique() {
+        return prixApplique;
+    }
+
+    int quantite;
 
     @Column(name="prix_applique")
-    private float prixApplique;
+    float prixApplique;
 
     @Embeddable
-    public static class ArticlesCommandesId implements Serializable {
+    static class ArticlesCommandesId implements Serializable {
 
         @Column(name = "fk_article")
-        private Long fkArticle;
+        Long fkArticle;
 
         @Column(name = "fk_commande")
-        private Long fkCommande;
+        Long fkCommande;
 
+        public Long getFkArticle() {
+            return fkArticle;
+        }
+
+        public Long getFkCommande() {
+            return fkCommande;
+        }
     }
 }

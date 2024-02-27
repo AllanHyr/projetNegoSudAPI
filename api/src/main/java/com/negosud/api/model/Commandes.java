@@ -12,17 +12,37 @@ public class Commandes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
     @Column(name="date_commande")
-    private Date dateCommande;
+    Date dateCommande;
 
-    private String commentaire;
+    public Long getId() {
+        return id;
+    }
+
+    public Date getDateCommande() {
+        return dateCommande;
+    }
+
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public Long getFkFournisseur() {
+        return fkFournisseur;
+    }
+
+    public Long getFkUtilisateur() {
+        return fkUtilisateur;
+    }
+
+    String commentaire;
 
     @Column(name="fk_fournisseur")
-    private Long fkFournisseur;
+    Long fkFournisseur;
 
     @Column(name="fk_utilisateur")
-    private Long fkUtilisateur;
+    Long fkUtilisateur;
 
 }

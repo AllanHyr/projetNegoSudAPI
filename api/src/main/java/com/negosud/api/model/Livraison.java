@@ -12,18 +12,38 @@ public class Livraison {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
     @Column(name="date_livraison")
-    private Date dateLivraison;
+    Date dateLivraison;
+
+    public Long getId() {
+        return id;
+    }
+
+    public Date getDateLivraison() {
+        return dateLivraison;
+    }
+
+    public String getAdresseLivraison() {
+        return adresseLivraison;
+    }
+
+    public Long getFkCoordonnee() {
+        return fkCoordonnee;
+    }
+
+    public Long getFkFacturation() {
+        return fkFacturation;
+    }
 
     @Column(name="adresse_livraison")
-    private String adresseLivraison;
+    String adresseLivraison;
 
     @Column(name="fk_coordonnee")
-    private Long fkCoordonnee;
+    Long fkCoordonnee;
 
     @Column(name="fk_facturation")
-    private Long fkFacturation;
+    Long fkFacturation;
 
 }

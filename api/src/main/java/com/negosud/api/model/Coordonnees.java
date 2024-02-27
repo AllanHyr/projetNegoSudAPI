@@ -10,14 +10,14 @@ public class Coordonnees {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
-    private String adresse;
+    String adresse;
 
-    private String mail;
+    String mail;
 
-    private String telephone;
+    String telephone;
 
     @Column(name="fk_utilisateur")
-    private Long fkUtilisateur;
+    Long fkUtilisateur;
 }

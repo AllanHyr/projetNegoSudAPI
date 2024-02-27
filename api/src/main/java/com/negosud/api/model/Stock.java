@@ -10,9 +10,17 @@ public class Stock {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public int getQuantiteStock() {
+        return quantiteStock;
+    }
 
     @Column(name="quantite_stock")
-    private int quantiteStock;
+    int quantiteStock;
 
 }

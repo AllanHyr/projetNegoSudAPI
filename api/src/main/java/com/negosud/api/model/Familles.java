@@ -10,10 +10,22 @@ public class Familles {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
-    private String nom;
+    String nom;
 
-    private String description;
+    public Long getId() {
+        return id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    String description;
 
 }

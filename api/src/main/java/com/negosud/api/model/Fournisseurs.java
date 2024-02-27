@@ -10,12 +10,28 @@ public class Fournisseurs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
-    private String nom;
+    public Long getId() {
+        return id;
+    }
 
-    private String description;
+    public String getNom() {
+        return nom;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Long getFkCoordonnee() {
+        return fkCoordonnee;
+    }
+
+    String nom;
+
+    String description;
 
     @Column(name="fk_coordonnee")
-    private Long fkCoordonnee;
+    Long fkCoordonnee;
 }

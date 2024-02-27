@@ -12,16 +12,36 @@ public class Facturation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
-    private float TVA;
+    float TVA;
+
+    public Long getId() {
+        return id;
+    }
+
+    public float getTVA() {
+        return TVA;
+    }
+
+    public Date getDatePaiement() {
+        return datePaiement;
+    }
+
+    public String getMoyenPaiement() {
+        return moyenPaiement;
+    }
+
+    public Long getFkCommande() {
+        return fkCommande;
+    }
 
     @Column(name="date_paiement")
-    private Date datePaiement;
+    Date datePaiement;
 
     @Column(name="moyen_paiement")
-    private String moyenPaiement;
+    String moyenPaiement;
 
     @Column(name="fk_commande")
-    private Long fkCommande;
+    Long fkCommande;
 }

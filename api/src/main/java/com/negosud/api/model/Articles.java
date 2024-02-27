@@ -10,35 +10,93 @@ public class Articles {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
-    private String reference;
+    String reference;
 
-    private String nom;
+    String nom;
 
-    private float prix;
+    float prix;
 
-    private String description;
+    String description;
 
-    private float marge;
+    float marge;
 
-    private int conditionnement;
+    int conditionnement;
 
-    private boolean reapprovisionnement;
+    int annee;
+
+    boolean reapprovisionnement;
 
     @Column(name="quantite_reappro")
-    private int quantiteReappro;
+    int quantiteReappro;
 
     @Column(name="seuil_mini")
-    private int seuilMini;
+    int seuilMini;
 
     @Column(name="fk_fournisseur")
-    private Long fkFournisseur;
+    Long fkFournisseur;
+
+    public int getAnnee() {
+        return annee;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getReference() {
+        return reference;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public float getPrix() {
+        return prix;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public float getMarge() {
+        return marge;
+    }
+
+    public int getConditionnement() {
+        return conditionnement;
+    }
+
+    public boolean isReapprovisionnement() {
+        return reapprovisionnement;
+    }
+
+    public int getQuantiteReappro() {
+        return quantiteReappro;
+    }
+
+    public int getSeuilMini() {
+        return seuilMini;
+    }
+
+    public Long getFkFournisseur() {
+        return fkFournisseur;
+    }
+
+    public Long getFkStockage() {
+        return fkStockage;
+    }
+
+    public Long getFkFamille() {
+        return fkFamille;
+    }
 
     @Column(name="fk_stock")
-    private Long fkStockage;
+    Long fkStockage;
 
     @Column(name="fk_famille")
-    private Long fkFamille;
+    Long fkFamille;
 
 }
