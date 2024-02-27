@@ -42,6 +42,7 @@ CREATE TABLE Utilisateurs(
    mot_de_passe VARCHAR(50) NOT NULL,
    nom VARCHAR(50),
    prenom VARCHAR(50),
+   token VARCHAR(50),
    PRIMARY KEY(id)
 );
 
@@ -61,7 +62,7 @@ CREATE TABLE Coordonnees(
    id BIGINT auto_increment,
    adresse VARCHAR(50) NOT NULL,
    mail VARCHAR(50),
-   telephone VARCHAR(50),
+   telephone VARCHAR(10),
    fk_utilisateur BIGINT NOT NULL,
    PRIMARY KEY(id),
    FOREIGN KEY(fk_utilisateur) REFERENCES Utilisateurs(id)
